@@ -7,5 +7,5 @@
 
 ![](fotos/foto-2.png)
 ![](fotos/foto-3.png)
-![](fotos/imagem-3.png)
+![](fotos/imagem-4.png)
 
