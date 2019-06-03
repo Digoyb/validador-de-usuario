@@ -1,0 +1,48 @@
+<div class="row mt-4">
+  <div class="col-md-6">
+    <div class="row" style="height: 450px;">
+      <div class="col-md-12 my-auto side-header">
+        <img src="/assets/img/add_user.png" class="mx-auto d-block">
+        <h1>Registro de Usuário</h1>
+        <p><em>-Usando <strong>Asp.Net Core Web API</strong> e <strong>Angular 7</strong></em></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+      <div class="form-group required">
+        <label>Nome de Usuário</label>
+        <input class="form-control" formControlName="UserName">
+        <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">Este campo é obrigatório.</label>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" formControlName="Email">
+        <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Email Inválido.</label>
+      </div>
+      <div class="form-group">
+        <label>Nome Completo</label>
+        <input class="form-control" formControlName="FullName">
+      </div>
+      <div formGroupName="Passwords">
+        <div class="form-group required">
+          <label>Password</label>
+          <input type="password" class="form-control" formControlName="Password">
+          <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">Este campo é obrigatório.</label>
+          <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Mínimo de 4 caracteres.</label>
+        </div>
+        <div class="form-group required">
+          <label>Confirmar Password</label>
+          <input type="password" class="form-control" formControlName="ConfirmPassword">
+          <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">Este campo é obrigatório.</label>
+          <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirmação não equivale.</label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8 offset-md-2">
+          <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModel.valid">Enviar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
