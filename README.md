@@ -4,7 +4,8 @@
 ###### Antes de rodar o projeto
  1. Instalar pacotes com npm install no Angular folder.
  
-![](fotos/foto-4.png)
+
 ![](fotos/foto-2.png)
 ![](fotos/foto-3.png)
+![](fotos/imagem-3.png)
 
